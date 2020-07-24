@@ -1,0 +1,6 @@
+@inproceedings{liu2020factorize,
+    title = {Learning to Factorize and Relight a City}
+    author = {Liu, Andrew and Ginosar, Shiry and Zhou, Tinghui and Efros, Alexei A. and Snavely, Noah},
+    booktitle={ECCV},
+    year = {2020}
+}
