@@ -89,6 +89,36 @@
       background: #FFD700;
       cursor: pointer;
     }
+  /* "switch" is the additional images which are all on top of each other.
+     All are hidden except the one whose switch-XX class matches the
+     show-XX on the container.
+  */
+  .switch-box {
+    position: relative;
+  }
+  .switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+  }
+  .container[show="000"] .switch-000 { visibility: inherit; }
+  .container[show="002"] .switch-002 { visibility: inherit; }
+  .container[show="004"] .switch-004 { visibility: inherit; }
+  .container[show="006"] .switch-006 { visibility: inherit; }
+  .container[show="008"] .switch-008 { visibility: inherit; }
+  .container[show="010"] .switch-010 { visibility: inherit; }
+  .container[show="012"] .switch-012 { visibility: inherit; }
+  .container[show="014"] .switch-014 { visibility: inherit; }
+  .container[show="016"] .switch-016 { visibility: inherit; }
+  .container[show="018"] .switch-018 { visibility: inherit; }
+  .container[show="020"] .switch-020 { visibility: inherit; }
+  .container[show="022"] .switch-022 { visibility: inherit; }
+  .container[show="024"] .switch-024 { visibility: inherit; }
+  .container[show="026"] .switch-026 { visibility: inherit; }
+  .container[show="028"] .switch-028 { visibility: inherit; }
   </style>
 </head>
 
@@ -150,73 +180,97 @@
             various panoramic images and the effect of manually rotating our azimuth (which is succinctly given to the generator as an angle).
           </p>
           <p style="text-align:justify">
-            We show scenes where the sun moves with the slider below. This may be slow while the webpage fetches images, but should be smooth
-            after loading all images.
+            We show scenes where the sun moves with the sliders below. 
           </p>
         </div>
       </div>
-      <div class="container" align=center id="weather" style="max-width:1200px;width:100%">
+      <div class="container" align=center id="ny-switch" style="max-width:1200px;width:100%">
         <hr>
         <h3 class="font-weight-light">New York City, USA</h3>
         <div class="container" style="width:50%">
-          <input type="range" min="0" max="100" value="50" class="slider" id="suncontrol_ny" oninput="update('switch-image-ny', 'suncontrol_ny')">
+          <input type="range" min="0" max="100" value="50" class="slider" id="suncontrol_ny" oninput="update('suncontrol_ny', 'ny-switch')">
         </div>
         <br>
         <div class="row">
           <div class="col-sm">
-            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/000023/00_000.png"></image>
+            <div class="switch-box">
+              <image class="img-fluid" src="./images/sun_rot/nyc/000023/00_000.png"></image>
+            </div>
           </div>
           <div class="col-sm">
-            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/000196/00_000.png"></image>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/001350/02_000.png"></image>
-          </div>
-          <div class="col-sm">
-            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/004173/00_000.png"></image>
+            <div class="switch-box">
+              <image class="img-fluid" src="./images/sun_rot/nyc/000196/00_000.png"></image>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/007127/01_000.png"></image>
+            <div class="switch-box">
+              <image class="img-fluid" src="./images/sun_rot/nyc/001350/02_000.png"></image>
+            </div>
           </div>
           <div class="col-sm">
-            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/004841/01_000.png"></image>
+            <div class="switch-box">
+              <image class="img-fluid" src="./images/sun_rot/nyc/004173/00_000.png"></image>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <div class="switch-box">
+              <image class="img-fluid" src="./images/sun_rot/nyc/007127/01_000.png"></image>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="switch-box">
+              <image class="img-fluid" src="./images/sun_rot/nyc/004841/01_000.png"></image>
+            </div>
           </div>
         </div>
         <br>
         <h3 class="font-weight-light">Paris, France</h3>
         <div class="container" style="width:50%">
-          <input type="range" min="0" max="100" value="50" class="slider" id="suncontrol_p" oninput="update('switch-image-p', 'suncontrol_p')">
+        <input type="range" min="0" max="100" value="50" class="slider" id="suncontrol_p" oninput="update('suncontrol_p', 'paris-switch')">
+      </div>
+        <div class="container" align="center" id="paris-switch" style="max-width:1200px;width:100%">
+          <div class="row">
+            <div class="col-sm">
+              <div class="switch-box">
+              <img class="img-fluid" src="./images/sun_rot/paris/000315/00_000.png">
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="switch-box">
+              <img class="img-fluid" src="./images/sun_rot/paris/002596/00_000.png">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <div class="switch-box">
+              <img class="img-fluid" src="./images/sun_rot/paris/003155/00_000.png">
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="switch-box">
+              <img class="img-fluid" src="./images/sun_rot/paris/007070/00_000.png">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <div class="switch-box">
+              <img class="img-fluid" src="./images/sun_rot/paris/007334/00_000.png">
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="switch-box">
+              <img class="img-fluid" src="./images/sun_rot/paris/008427/00_000.png">
+              </div>
+            </div>
+          </div>
+          <br>
         </div>
-        <br>
-        <div class="row">
-          <div class="col-sm">
-            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/000315/00_000.png"></image>
-          </div>
-          <div class="col-sm">
-            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/002596/00_000.png"></image>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/003155/00_000.png"></image>
-          </div>
-          <div class="col-sm">
-            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/007070/00_000.png"></image>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/007334/00_000.png"></image>
-          </div>
-          <div class="col-sm">
-            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/008427/00_000.png"></image>
-          </div>
-        </div>
-        <br>
         <h3 class="font-weight-light">San Francisco, USA</h3>
         <br>
         <h3 class="font-weight-light">London, United Kingdom</h3>
@@ -239,7 +293,7 @@
 
       </p> 
 
-      <p>HTML template is from Bootstrap released with <a href="https://github.com/twbs/bootstrap/blob/v4.0.0/LICENSE">MIT License</a>.</p>
+      <p>HTML template is from Bootstrap released with <a href="https://github.com/twbs/bootstrap/blob/v4.0.0/LICENSE">MIT License</a>. <br>Special thanks to Richard Tucker for help with the sliders.</p>
     </div>
   </footer>
 
@@ -250,18 +304,38 @@
       <script src="./index_files/popper.min.js"></script>
       <script src="./index_files/bootstrap.min.js"></script>
       <script src="./index_files/holder.min.js"></script>
-      <script>function update(k, suncontrol){
+      <script>
+      function loadAllImages(box) {
+        // Load all images inside a switch-box.
+        // Get base url from the existing img.
+        const path = box.querySelector('img').src.slice(0, -7);
+        for (let i = 0; i < 30; i += 2) {
+          // Add img for each i.
+          const digits = ('00' + i).slice(-3);
+          const url = path + digits + '.png';
+          const img = document.createElement('img');
+          img.src = url;
+          img.className = 'switch switch-' + digits;
+          box.appendChild(img);
+        }
+      }
+
+      /* When the page is loaded, add each image to each switch-box. */
+      for (box of document.querySelectorAll('.switch-box')) {
+        loadAllImages(box);
+      }
+
+      function update(suncontrol, k){
         // 000.png is the center of the image, so shift value by 50
         var value = parseInt(document.getElementById(suncontrol).value);
         var sun_pos = (value + 50) % 100
-        console.log(sun_pos)
         var index = "00" + (2 * (Math.round(sun_pos / 100. * 15) % 15)).toString()
-        var index = index.slice(-3)
-        function inline(i, origText) {
-          return (origText.substring(0, origText.length - 7) + index + ".png")
-        }
-        im_to_switch = $("." + k).attr("src", inline);
-       }</script>
+        var digits = index.slice(-3);
+        // If you have multiple sliders, and multiple containers,
+        // you need to change the following line to use the right container.
+        document.getElementById(k).setAttribute('show', digits); 
+      }
+      </script>
 
 
       <svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="17" style="font-weight:bold;font-size:17pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg></body></html>
