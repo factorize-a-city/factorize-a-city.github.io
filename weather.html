@@ -106,47 +106,82 @@
         <p style="text-align:justify">
           We present results for relighting stacks. This can be done by copying the time-varying representation (which encodes our lighting context and sun azimuth) from a source scene and relighting a target scene's permanent representation (reflectance and geometry). We show the same randomly sampled set of illuminations applied to many different scenes across many different cities. Selecting a button below will change all of the scenes' illuminations simultaneously.
         </p>
-        <br>
-        <h4>Select Illumination</h4>
-        <div class="btn-group d-flex" role="group" aria-label="Select Lighting">
-          <button type="button" onclick="test(0)" class="btn w-100 btn-secondary">1</button>
-          <button type="button" onclick="test(1)" class="btn w-100 btn-secondary">2</button>
-          <button type="button" onclick="test(2)" class="btn w-100 btn-secondary">3</button>
-          <button type="button" onclick="test(3)" class="btn w-100 btn-secondary">4</button>
-          <button type="button" onclick="test(4)" class="btn w-100 btn-secondary">5</button>
-          <button type="button" onclick="test(5)" class="btn w-100 btn-secondary">6</button>
-          <button type="button" onclick="test(6)" class="btn w-100 btn-secondary">7</button>
-          <button type="button" onclick="test(7)" class="btn w-100 btn-secondary">8</button>
-          <button type="button" onclick="test(8)" class="btn w-100 btn-secondary">9</button>
-        </div>
       </div>
       <div class="container" align=center id="weather" style="max-width:1200px;width:100%">
         <hr>
         <h3 class="font-weight-light">New York City, USA</h3>
+        <div class="btn-group d-flex" role="group" aria-label="Select Lighting">
+          <button type="button" onclick="test(0, 'switch-image-ny')" class="btn w-100 btn-secondary">1</button>
+          <button type="button" onclick="test(1, 'switch-image-ny')" class="btn w-100 btn-secondary">2</button>
+          <button type="button" onclick="test(2, 'switch-image-ny')" class="btn w-100 btn-secondary">3</button>
+          <button type="button" onclick="test(3, 'switch-image-ny')" class="btn w-100 btn-secondary">4</button>
+          <button type="button" onclick="test(4, 'switch-image-ny')" class="btn w-100 btn-secondary">5</button>
+          <button type="button" onclick="test(5, 'switch-image-ny')" class="btn w-100 btn-secondary">6</button>
+          <button type="button" onclick="test(6, 'switch-image-ny')" class="btn w-100 btn-secondary">7</button>
+          <button type="button" onclick="test(7, 'switch-image-ny')" class="btn w-100 btn-secondary">8</button>
+          <button type="button" onclick="test(8, 'switch-image-ny')" class="btn w-100 btn-secondary">9</button>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sky_condition/nyc/000744/sky_cond_0.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sky_condition/nyc/001721/sky_cond_0.png"></image>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sky_condition/nyc/001925/sky_cond_0.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sky_condition/nyc/003628/sky_cond_0.png"></image>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sky_condition/nyc/005959/sky_cond_0.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sky_condition/nyc/002261/sky_cond_0.png"></image>
+          </div>
+        </div>
         <br>
         <h3 class="font-weight-light">Paris, France</h3>
+        <div class="btn-group d-flex" role="group" aria-label="Select Lighting">
+          <button type="button" onclick="test(0, 'switch-image-p')" class="btn w-100 btn-secondary">1</button>
+          <button type="button" onclick="test(1, 'switch-image-p')" class="btn w-100 btn-secondary">2</button>
+          <button type="button" onclick="test(2, 'switch-image-p')" class="btn w-100 btn-secondary">3</button>
+          <button type="button" onclick="test(3, 'switch-image-p')" class="btn w-100 btn-secondary">4</button>
+          <button type="button" onclick="test(4, 'switch-image-p')" class="btn w-100 btn-secondary">5</button>
+          <button type="button" onclick="test(5, 'switch-image-p')" class="btn w-100 btn-secondary">6</button>
+          <button type="button" onclick="test(6, 'switch-image-p')" class="btn w-100 btn-secondary">7</button>
+          <button type="button" onclick="test(7, 'switch-image-p')" class="btn w-100 btn-secondary">8</button>
+          <button type="button" onclick="test(8, 'switch-image-p')" class="btn w-100 btn-secondary">9</button>
+        </div>
+        <br>
         <div class="row">
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sky_condition/paris/000010/sky_cond_0.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sky_condition/paris/000010/sky_cond_0.png"></image>
           </div>
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sky_condition/paris/008555/sky_cond_0.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sky_condition/paris/008555/sky_cond_0.png"></image>
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sky_condition/paris/009048/sky_cond_0.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sky_condition/paris/009048/sky_cond_0.png"></image>
           </div>
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sky_condition/paris/009653/sky_cond_0.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sky_condition/paris/009653/sky_cond_0.png"></image>
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sky_condition/paris/011804/sky_cond_0.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sky_condition/paris/011804/sky_cond_0.png"></image>
           </div>
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sky_condition/paris/017294/sky_cond_0.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sky_condition/paris/017294/sky_cond_0.png"></image>
           </div>
         </div>
         <br>
@@ -182,11 +217,11 @@
       <script src="./index_files/popper.min.js"></script>
       <script src="./index_files/bootstrap.min.js"></script>
       <script src="./index_files/holder.min.js"></script>
-      <script>function test(k){
+      <script>function test(k, name){
         function inline(i, origText) {
           return (origText.substring(0, origText.length - 5) + k.toString() + ".png")
         }
-        im_to_switch = $(".switch-image").attr("src", inline);
+        im_to_switch = $("." + name).attr("src", inline);
        }</script>
 
 

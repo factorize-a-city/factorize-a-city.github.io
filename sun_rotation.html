@@ -153,37 +153,67 @@
             We show scenes where the sun moves with the slider below. This may be slow while the webpage fetches images, but should be smooth
             after loading all images.
           </p>
-          <br>
-          <input type="range" min="0" max="100" value="50" class="slider" id="suncontrol" oninput="update()">
         </div>
       </div>
       <div class="container" align=center id="weather" style="max-width:1200px;width:100%">
         <hr>
         <h3 class="font-weight-light">New York City, USA</h3>
+        <div class="container" style="width:50%">
+          <input type="range" min="0" max="100" value="50" class="slider" id="suncontrol_ny" oninput="update('switch-image-ny', 'suncontrol_ny')">
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/000023/00_000.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/000196/00_000.png"></image>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/001350/02_000.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/004173/00_000.png"></image>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/007127/01_000.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sun_rot/nyc/004841/01_000.png"></image>
+          </div>
+        </div>
         <br>
         <h3 class="font-weight-light">Paris, France</h3>
+        <div class="container" style="width:50%">
+          <input type="range" min="0" max="100" value="50" class="slider" id="suncontrol_p" oninput="update('switch-image-p', 'suncontrol_p')">
+        </div>
+        <br>
         <div class="row">
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sun_rot/paris/000315/00_000.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/000315/00_000.png"></image>
           </div>
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sun_rot/paris/002596/00_000.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/002596/00_000.png"></image>
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sun_rot/paris/003155/00_000.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/003155/00_000.png"></image>
           </div>
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sun_rot/paris/007070/00_000.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/007070/00_000.png"></image>
           </div>
         </div>
         <div class="row">
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sun_rot/paris/007334/00_000.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/007334/00_000.png"></image>
           </div>
           <div class="col-sm">
-            <image class="switch-image img-fluid" src="./images/sun_rot/paris/008427/00_000.png"></image>
+            <image class="switch-image-p img-fluid" src="./images/sun_rot/paris/008427/00_000.png"></image>
           </div>
         </div>
         <br>
@@ -220,9 +250,9 @@
       <script src="./index_files/popper.min.js"></script>
       <script src="./index_files/bootstrap.min.js"></script>
       <script src="./index_files/holder.min.js"></script>
-      <script>function update(){
+      <script>function update(k, suncontrol){
         // 000.png is the center of the image, so shift value by 50
-        var value = parseInt(document.getElementById("suncontrol").value);
+        var value = parseInt(document.getElementById(suncontrol).value);
         var sun_pos = (value + 50) % 100
         console.log(sun_pos)
         var index = "00" + (2 * (Math.round(sun_pos / 100. * 15) % 15)).toString()
@@ -230,7 +260,7 @@
         function inline(i, origText) {
           return (origText.substring(0, origText.length - 7) + index + ".png")
         }
-        im_to_switch = $(".switch-image").attr("src", inline);
+        im_to_switch = $("." + k).attr("src", inline);
        }</script>
 
 
