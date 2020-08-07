@@ -48,13 +48,13 @@
     margin-right: 30px;
     margin-bottom: 5px;
   }
-    hr
-    {
-      border: 0;
-      height: 1px;
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-      width: 75%;
-    }
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    width: 75%;
+  }
   </style>
 </head>
 
@@ -100,8 +100,60 @@
           </div>
         </div>
       </div>
-      <div class="container" align=center id="paris-weather">        
-        
+      <br>
+      <div class="container" align=center id="weather" style="max-width:800px;width:80%">
+        <h2 class="font-weight-light">Changing Sky Illumination</h2>
+        <p style="text-align:justify">
+          We present results for relighting stacks. This can be done by copying the time-varying representation (which encodes our lighting context and sun azimuth) from a source scene and relighting a target scene's permanent representation (reflectance and geometry). We show the same randomly sampled set of illuminations applied to many different scenes across many different cities. Selecting a button below will change all of the scenes' illuminations simultaneously.
+        </p>
+        <br>
+        <h4>Select Illumination</h4>
+        <div class="btn-group d-flex" role="group" aria-label="Select Lighting">
+          <button type="button" onclick="test(0)" class="btn w-100 btn-secondary">1</button>
+          <button type="button" onclick="test(1)" class="btn w-100 btn-secondary">2</button>
+          <button type="button" onclick="test(2)" class="btn w-100 btn-secondary">3</button>
+          <button type="button" onclick="test(3)" class="btn w-100 btn-secondary">4</button>
+          <button type="button" onclick="test(4)" class="btn w-100 btn-secondary">5</button>
+          <button type="button" onclick="test(5)" class="btn w-100 btn-secondary">6</button>
+          <button type="button" onclick="test(6)" class="btn w-100 btn-secondary">7</button>
+          <button type="button" onclick="test(7)" class="btn w-100 btn-secondary">8</button>
+          <button type="button" onclick="test(8)" class="btn w-100 btn-secondary">9</button>
+        </div>
+      </div>
+      <div class="container" align=center id="weather" style="max-width:1200px;width:100%">
+        <hr>
+        <h3 class="font-weight-light">New York City, USA</h3>
+        <br>
+        <h3 class="font-weight-light">Paris, France</h3>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image img-fluid" src="./images/sky_condition/paris/000010/sky_cond_0.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image img-fluid" src="./images/sky_condition/paris/008555/sky_cond_0.png"></image>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image img-fluid" src="./images/sky_condition/paris/009048/sky_cond_0.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image img-fluid" src="./images/sky_condition/paris/009653/sky_cond_0.png"></image>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image img-fluid" src="./images/sky_condition/paris/011804/sky_cond_0.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image img-fluid" src="./images/sky_condition/paris/017294/sky_cond_0.png"></image>
+          </div>
+        </div>
+        <br>
+        <h3 class="font-weight-light">San Francisco, USA</h3>
+        <br>
+        <h3 class="font-weight-light">London, United Kingdom</h3>
+
       </div>
     </section>
   </main>
@@ -130,6 +182,12 @@
       <script src="./index_files/popper.min.js"></script>
       <script src="./index_files/bootstrap.min.js"></script>
       <script src="./index_files/holder.min.js"></script>
+      <script>function test(k){
+        function inline(i, origText) {
+          return (origText.substring(0, origText.length - 5) + k.toString() + ".png")
+        }
+        im_to_switch = $(".switch-image").attr("src", inline);
+       }</script>
 
 
       <svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="17" style="font-weight:bold;font-size:17pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg></body></html>
