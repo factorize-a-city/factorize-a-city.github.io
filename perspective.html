@@ -3,12 +3,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Project Page for Learning to Factorize and Relight a City. ECCV 2020">
   <meta name="author" content="Andrew">
-  <meta property="og:image" content="./images/animated_teaser.gif">
-  <meta property="og:title" content="Learning to Facrtorize and Relight a City.">
-  <meta property='og:video' content='https://www.youtube.com/watch?v=-0_gmw_oxvA'/>
+
+  <meta property="og:image" content="https://factorize-a-city.github.io/images/teaser_still_og.jpg">
+  <meta property="og:url" content="https://factorize-a-city.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Learning to Facrtorize and Relight a City (ECCV 2020)">
+  <meta property='og:video' content='https://www.youtube.com/embed/-0_gmw_oxvA'/>
+  <meta property="og:description" content="We can take any part of Google Street View and relight the scene using our unsupervised factorization. This lets us imagine the any part of the world at any point in time.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@ndrewliu">
+  <meta name="twitter:title" content="Learning to Facrtorize and Relight a City (EECV 2020)">
+  <meta name="twitter:description" content="We can take any part of Google Street View and relight the scene using our unsupervised factorization. This lets us imagine the any part of the world at any point in time.">
+  <meta name=”twitter:url” content=”https://factorize-a-city.github.io” />
+  <meta name="twitter:image" content="https://factorize-a-city.github.io/images/teaser_still.jpg">
+
+
   <link rel="icon" href="https://fonts.gstatic.com/s/i/googlematerialicons/location_city/v6/googblue-24dp/1x/gm_location_city_googblue_24dp.png">
 
-  <title>Learning to Factorize and Relight a City</title>
+  <title>Learning to Factorize and Relight a City - Reprojecting Perspective</title>
   <link rel="canonical" href="https://factorize-a-city.github.io">
 
   <!-- Bootstrap core CSS -->
@@ -55,6 +68,14 @@
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
       width: 75%;
     }
+
+    .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
   </style>
 </head>
 
@@ -100,15 +121,237 @@
           </div>
         </div>
       </div>
-      <div class="container" align=center id="sunrotation" style="max-width:800px;width:80%">
-        <h2 class="font-weight-light">Reprojecting Panoramas to Perspective</h2>
-          <p style="text-align:justify">
+      <div class="container" align=center id="perspective_description" style="max-width:800px;width:80%">
+        <h2 class="font-weight-light">Perspective Imagery</h2>
+          <p style="text-align:justify">We train our model on panoramic imagery. However using standard reprojection geometry, we can convert parts of our panoramas into more standard perspective imageries. This includes panoramic imagery that we have generated using our factorization model!
+          <br><br>
+          Here we show a selection of manipulations with a perspective reprojection. We show a real frame from the source timelapse stack and various reprojected-relit results for NYC and Paris.
           </p>
         </div>
       </div>
       <hr>
+
+      <div class="container" align=center id="new_york_perspective" style="max-width:1000px;">
+        <h3 class="font-weight-light">New York City, USA</h3>
+        <div id="nycarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#nycarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#nycarousel" data-slide-to="1"></li>
+            <li data-target="#nycarousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" style="background-color:#C0C0C0;min-width:600px">
+            <div class="carousel-item active">
+              <br>
+              <div class="row" style="width:90%">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3.png"></image>
+                </div>
+              </div>
+              <br>        
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3_1/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3_1/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3_1/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3_1/0003.png"></image>
+                </div>
+              </div>
+              <br>
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3_2/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3_2/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3_2/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc3_2/0003.png"></image>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div class="carousel-item">
+              <br>
+              <div class="row" style="width:90%">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2.png"></image>
+                </div>
+              </div>
+              <br>        
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2_2/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2_2/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2_2/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2_2/0003.png"></image>
+                </div>
+              </div>
+              <br>
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2_1/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2_1/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2_1/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc2_1/0003.png"></image>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div class="carousel-item">
+              <br>
+              <div class="row" style="width:90%">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1.png"></image>
+                </div>
+              </div>
+              <br>        
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1_1/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1_1/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1_1/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1_1/0003.png"></image>
+                </div>
+              </div>
+              <br>
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1_2/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1_2/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1_2/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/nyc1_2/0003.png"></image>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#nycarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#nycarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <br>
+      <div class="container" align=center id="paris_perspective" style="max-width:1000px;">
+        <h3 class="font-weight-light">Paris, France</h3>
+        <div id="pcarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#pcarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#pcarousel" data-slide-to="1"></li>
+            <li data-target="#pcarousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" style="background-color:#C0C0C0;min-width:600px">
+            <div class="carousel-item active">
+              <br>
+              <div class="row" style="width:90%">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris1.png"></image>
+                </div>
+              </div>
+              <br>        
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris1_2/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris1_2/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris1_2/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris1_2/0003.png"></image>
+                </div>
+              </div>
+              <br>
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris1_1/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris1_1/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris1_1/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris1_1/0003.png"></image>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div class="carousel-item">
+              <br>
+              <div class="row" style="width:90%">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris2.png"></image>
+                </div>
+              </div>
+              <br>        
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris2_1/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris2_1/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris2_1/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris2_1/0003.png"></image>
+                </div>
+              </div>
+              <br>
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris2_2/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris2_2/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris2_2/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris2_2/0003.png"></image>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div class="carousel-item">
+              <br>
+              <div class="row" style="width:90%">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris3.png"></image>
+                </div>
+              </div>
+              <br>        
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris3_2/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris3_2/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris3_2/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris3_2/0003.png"></image>
+                </div>
+              </div>
+              <br>
+              <div class="row" style="min-width:500px">
+                <div class="col-sm">
+                  <image class="img-fluid" src="./images/reprojected_results/paris3_1/tmp.gif"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris3_1/0000.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris3_1/0001.png"></image>
+                  <image class="img-fluid" src="./images/reprojected_results/paris3_1/0003.png"></image>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#pcarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#pcarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class="container" align=center id="additionalresults" style="max-width:800px;width:80%">
+        <h2 class="font-weight-light">Additional Results</h2>
+          <p style="text-align:justify">
+            We present additional generated results. Despite training on scenes from New York City, we can relight scenes from entirely new cities and even continents.
+            Other cities coming soon!
+          </p>
+          <div class="list-group" style="width:50%">
+            <a href="./weather.html" class="list-group-item list-group-item-action">Changing Sky Illumination</a>
+            <a href="./sun_rotation.html" class="list-group-item list-group-item-action">Rotating Sun Azimuth</a>
+            <a href="./hyperlapse.html" class="list-group-item list-group-item-action">Synthetic Hyperlapse</a>
+            <a href="./perspective.html" class="list-group-item list-group-item-action">Perspective Imagery</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+  <br>
   <footer class="text-muted bg-light">
     <div class="container">
       <blockquote class="blockquote text-right">
