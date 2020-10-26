@@ -68,6 +68,71 @@
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
       width: 75%;
     }
+
+    .slidecontainer {
+      width: 50%;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 50%;
+      height: 25px;
+      background: #add8e6;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #FFD700;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: #FFD700;
+      cursor: pointer;
+    }
+  /* "switch" is the additional images which are all on top of each other.
+     All are hidden except the one whose switch-XX class matches the
+     show-XX on the container.
+  */
+  .switch-box {
+    position: relative;
+  }
+  .switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+  }
+  .container[show="000"] .switch-000 { visibility: inherit; }
+  .container[show="002"] .switch-002 { visibility: inherit; }
+  .container[show="004"] .switch-004 { visibility: inherit; }
+  .container[show="006"] .switch-006 { visibility: inherit; }
+  .container[show="008"] .switch-008 { visibility: inherit; }
+  .container[show="010"] .switch-010 { visibility: inherit; }
+  .container[show="012"] .switch-012 { visibility: inherit; }
+  .container[show="014"] .switch-014 { visibility: inherit; }
+  .container[show="016"] .switch-016 { visibility: inherit; }
+  .container[show="018"] .switch-018 { visibility: inherit; }
+  .container[show="020"] .switch-020 { visibility: inherit; }
+  .container[show="022"] .switch-022 { visibility: inherit; }
+  .container[show="024"] .switch-024 { visibility: inherit; }
+  .container[show="026"] .switch-026 { visibility: inherit; }
+  .container[show="028"] .switch-028 { visibility: inherit; }
   </style>
 </head>
 
@@ -89,7 +154,7 @@
             <a class="nav-link" href="resources/plenoptic_90_sec_V0.pdf">Slides</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Code [Coming Soon]</a>
+            <a class="nav-link" href="https://github.com/google-research/google-research/tree/master/factorize_a_city">Code</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./resources/supplementary.pdf">Supplementary</a>
@@ -204,6 +269,52 @@
         </div>
       </div>
       <hr>
+      <div class="container" align=center id="paper"  style="max-width:1000px;">
+        <h2 class="font-weight-light">Results</h2>
+        <br>
+        <div class="row">
+          <div class="container" style="width:80%">
+            <input type="range" min="0" max="100" value="50" class="slider" id="suncontrol_ny" oninput="update('suncontrol_ny', 'ny-switch')">
+          </div>
+          <div class="container" align=center id="ny-switch" style="max-width:1200px;width:100%">
+            <div class="row">
+              <div class="col-sm">
+                <div class="switch-box">
+                  <image class="img-fluid" src="./images/sun_rot/nyc/000023/00_000.png"></image>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="switch-box">
+                  <image class="img-fluid" src="./images/sun_rot/nyc/007127/01_000.png"></image>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="btn-group d-flex" role="group" aria-label="Select Lighting">
+          <button type="button" onclick="test(0, 'switch-image-ny')" class="btn w-100 btn-secondary">1</button>
+          <button type="button" onclick="test(1, 'switch-image-ny')" class="btn w-100 btn-secondary">2</button>
+          <button type="button" onclick="test(2, 'switch-image-ny')" class="btn w-100 btn-secondary">3</button>
+          <button type="button" onclick="test(3, 'switch-image-ny')" class="btn w-100 btn-secondary">4</button>
+          <button type="button" onclick="test(4, 'switch-image-ny')" class="btn w-100 btn-secondary">5</button>
+          <button type="button" onclick="test(5, 'switch-image-ny')" class="btn w-100 btn-secondary">6</button>
+          <button type="button" onclick="test(6, 'switch-image-ny')" class="btn w-100 btn-secondary">7</button>
+          <button type="button" onclick="test(7, 'switch-image-ny')" class="btn w-100 btn-secondary">8</button>
+          <button type="button" onclick="test(8, 'switch-image-ny')" class="btn w-100 btn-secondary">9</button>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sky_condition/nyc/003628/sky_cond_0.png"></image>
+          </div>
+          <div class="col-sm">
+            <image class="switch-image-ny img-fluid" src="./images/sky_condition/nyc/002261/sky_cond_0.png"></image>
+          </div>
+        </div>
+      </div>
+      <hr>
       <div class="container" align=center id="paper">
         <h2 class="font-weight-light">Paper</h2>
         <br>
@@ -270,6 +381,45 @@
   <script src="./index_files/popper.min.js"></script>
   <script src="./index_files/bootstrap.min.js"></script>
   <script src="./index_files/holder.min.js"></script>
+  <script>
+  function loadAllImages(box) {
+    // Load all images inside a switch-box.
+    // Get base url from the existing img.
+    const path = box.querySelector('img').src.slice(0, -7);
+    for (let i = 0; i < 30; i += 2) {
+      // Add img for each i.
+      const digits = ('00' + i).slice(-3);
+      const url = path + digits + '.png';
+      const img = document.createElement('img');
+      img.src = url;
+      img.className = 'switch switch-' + digits;
+      box.appendChild(img);
+    }
+  }
+
+  /* When the page is loaded, add each image to each switch-box. */
+  for (box of document.querySelectorAll('.switch-box')) {
+    loadAllImages(box);
+  }
+
+  function update(suncontrol, k){
+    // 000.png is the center of the image, so shift value by 50
+    var value = parseInt(document.getElementById(suncontrol).value);
+    var sun_pos = (value + 50) % 100
+    var index = "00" + (2 * (Math.round(sun_pos / 100. * 15) % 15)).toString()
+    var digits = index.slice(-3);
+    // If you have multiple sliders, and multiple containers,
+    // you need to change the following line to use the right container.
+    document.getElementById(k).setAttribute('show', digits); 
+  }
+  function test(k, name){
+        function inline(i, origText) {
+          return (origText.substring(0, origText.length - 5) + k.toString() + ".png")
+        }
+        im_to_switch = $("." + name).attr("src", inline);
+       }
+  </script>
+
 
 
     <svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="17" style="font-weight:bold;font-size:17pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg></body></html>
